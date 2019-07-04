@@ -1,4 +1,4 @@
-# Chars
+# Exstr
 
 Display printable characters in file, similar to strings but prints any printable character instead of finding strings.
 
