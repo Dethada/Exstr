@@ -1,6 +1,6 @@
 # Exstr
 
-Display printable characters in file, similar to strings but prints any printable character instead of finding strings.
+Get strings from file, similar to binutils strings.
 
 ## Building 🔨
 
@@ -16,18 +16,18 @@ make install
 ```
 
 ### Windows
-Add `target/release/chars` to somewhere in path.
+Add `target/release/exstr` to somewhere in path.
 
 ## Usage 📖
 
 ```bash
-➜ chars --help
-chars 0.1
+➜ exstr --help
+Exstr 0.1.0
 David Z. <david@dzhy.dev>
-Display printable characters in file
+Get strings from file
 
 USAGE:
-    chars --file <file>
+    exstr --file <file>
 
 FLAGS:
     -h, --help       Prints help information
