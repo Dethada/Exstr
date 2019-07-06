@@ -5,7 +5,7 @@ Get strings from file, similar to binutils strings.
 ## Building 🔨
 
 ```bash
-cargo build --release
+cargo build --bin exstr --release
 ```
 
 ## Install

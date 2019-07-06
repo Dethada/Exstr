@@ -4,5 +4,13 @@ version = "0.1.0"
 authors = ["David Z. <david@dzhy.dev>"]
 edition = "2018"
 
+[lib]
+name = "exstr"
+path = "src/lib.rs"
+
+[[bin]]
+name = "exstr"
+path = "src/bin/main.rs"
+
 [dependencies]
 clap = "~2.33"

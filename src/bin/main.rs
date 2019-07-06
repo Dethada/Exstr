@@ -3,6 +3,7 @@ use std::io::Read;
 use clap::{Arg, App, crate_version};
 use std::io::ErrorKind;
 use std::process::exit;
+use exstr;
 
 fn main() {
     let matches = App::new("Exstr")
@@ -24,26 +25,10 @@ fn main() {
         } else {
             println!("There was a problem opening the file.");
         }
-        exit(1)
+        exit(1);
     });
     let mut buf: Vec<u8> = Vec::new();
     file.read_to_end(&mut buf).unwrap();
-
-    let mut count: u64 = 0;
-    let mut last_index = 0;
-    for (i, byte) in buf.iter().enumerate() {
-        let c = *byte;
-        if (c > 31 && c < 127) || (c == 9 || c == 13) {
-            count += 1;
-        } else {
-            if count > 3 {
-                println!("{}", String::from_utf8_lossy(&buf[last_index..i-1]));
-            }
-            count = 0;
-            last_index = i + 1;
-        }
-    }
-    if count > 3 {
-        println!("{}", String::from_utf8_lossy(&buf[last_index..]));
-    }
+    let result = exstr::get_strings(buf, 4);
+    println!("{}", result);
 }
